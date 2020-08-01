@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test.uiautomator:uiautomator:2.2.0-alpha3@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d0e9b16bae0c6c1cda8e172a9cde2f5/uiautomator-2.2.0-alpha3/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d0e9b16bae0c6c1cda8e172a9cde2f5/uiautomator-2.2.0-alpha3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d0e9b16bae0c6c1cda8e172a9cde2f5/uiautomator-2.2.0-alpha3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/42901f622439f6f190058bd9e55f4689/uiautomator-2.2.0-alpha3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/42901f622439f6f190058bd9e55f4689/uiautomator-2.2.0-alpha3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/42901f622439f6f190058bd9e55f4689/uiautomator-2.2.0-alpha3/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.uiautomator/uiautomator/2.2.0-alpha3/298f720ba34b05b7ff1d209b2bf35036c0548af7/uiautomator-2.2.0-alpha3-javadoc.jar!/" />
