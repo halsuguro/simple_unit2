@@ -7,27 +7,12 @@
  * https://www.rallyhealth.com/coding/code-coverage-for-android-testing
  *
  **/
-buildscript {
-    repositories {
-        maven {
 
-            url "https://hiya.jfrog.io/hiya/maven-virtual"
-        }
-    }
-    dependencies {
-        classpath 'com.hiya:jacoco-android:0.1'
-    }
-}
-
- //apply plugin: 'com.android.application'
 apply plugin: 'com.hiya.jacoco-android'
 
 jacoco {
-    toolVersion = "0.8.4"
+    toolVersion = "0.8.4" // specify Jacoco version
 }
-
-apply plugin: 'com.hiya.jacoco-android'
-
 
 tasks.withType(Test) {
     jacoco.includeNoLocationClasses = true
