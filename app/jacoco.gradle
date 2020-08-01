@@ -1,8 +1,27 @@
+/**
+ *
+ * [Android開発のテストカバー率取得にはこのツールを使い分けると良いという話 - Qiita]
+ * https://qiita.com/keidroid/items/adc4f065b84d8a2cd17a
+ *
+ * [Code Coverage for Android Testing | Rally Health]
+ * https://www.rallyhealth.com/coding/code-coverage-for-android-testing
+ *
+ **/
 
-apply plugin: 'jacoco'
+apply plugin: 'com.hiya.jacoco-android'
 
 jacoco {
-    toolVersion = "0.8.4" //ツールバージョンを指定可能。省略可。
+    toolVersion = "0.8.4" // specify Jacoco version
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
+
+jacocoAndroidUnitTestReport {
+    csv.enabled false
+    xml.enabled false
+    html.enabled true
 }
 
 android.applicationVariants.all { variant ->
@@ -14,7 +33,7 @@ android.applicationVariants.all { variant ->
     }
 
     task("jacoco${variantName}TestReport", type: JacocoReport) {
-        //AndroidTest後にUnitTestの内容をマージします。
+        // Merge coverage result of unit test and ui test
         dependsOn "create${variantName}CoverageReport"
         dependsOn "test${variantName}UnitTest"
 
@@ -26,7 +45,7 @@ android.applicationVariants.all { variant ->
             html.enabled = true
         }
 
-        //無視するファイル(excludes)の設定を行います
+        // Set filter to ignore by file name
         def fileFilter = ['**/R.class',
                           '**/R$*.class',
                           '**/BuildConfig.*',
@@ -46,11 +65,11 @@ android.applicationVariants.all { variant ->
         def mainSrc = "${project.projectDir}/src/main/java"
 
         getSourceDirectories().setFrom(files([mainSrc]))
-        //Java, Kotlin混在ファイル対応
+        // Handle both Java and Kotlin files
         getClassDirectories().setFrom(files([javaDebugTree, kotlinDebugTree]))
         getExecutionData().setFrom(fileTree(dir: project.projectDir, includes: [
-                '**/*.exec',    //JUnit Test Result
-                '**/*.ec'])     //Espresso Test Result
+                '**/*.exec',    //JUnit Test(unit test) Result
+                '**/*.ec'])     //Espresso(ui test) Test Result
         )
     }
 }
