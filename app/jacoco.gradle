@@ -7,6 +7,13 @@
  * https://www.rallyhealth.com/coding/code-coverage-for-android-testing
  *
  **/
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    
+}
+
 
 apply plugin: 'com.hiya.jacoco-android'
 
