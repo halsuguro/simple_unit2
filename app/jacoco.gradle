@@ -30,7 +30,10 @@ jacocoAndroidUnitTestReport {
     html.enabled true
 }
 
-
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+}
 
 android.applicationVariants.all { variant ->
     def variantName = variant.name.capitalize() //ex. ProdDebug
