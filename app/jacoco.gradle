@@ -30,6 +30,8 @@ jacocoAndroidUnitTestReport {
     html.enabled true
 }
 
+
+
 android.applicationVariants.all { variant ->
     def variantName = variant.name.capitalize() //ex. ProdDebug
     def realVariantName = variant.name //ex. prodDebug
