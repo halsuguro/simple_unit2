@@ -26,7 +26,7 @@ tasks.withType(Test) {
 
 jacocoAndroidUnitTestReport {
     csv.enabled false
-    xml.enabled true
+    xml.enabled false
     html.enabled true
 }
 
